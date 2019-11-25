@@ -11,9 +11,22 @@
     </head>
     <body>
         <main class="main_page">
-            <nav class="navigation">
-                
-            </nav>
+            <header>
+                <div class="logo"><img src="assets/logo.png"/></div>
+                <nav class="navigation">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="hamburger">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                    <div class="line line3"></div>
+                </div>
+            </header>
             <div class="hero_box">
                 <div class="hero_text">                
                     <h1>
