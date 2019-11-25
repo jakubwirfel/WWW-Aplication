@@ -15,10 +15,8 @@
                 <div class="logo"><img src="assets/logo.png"/></div>
                 <nav class="navigation">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#open-modal">Sign in</a></li>
+                        <li><a href="#">Sign up</a></li>
                     </ul>
                 </nav>
                 <div class="hamburger">
@@ -27,6 +25,30 @@
                     <div class="line line3"></div>
                 </div>
             </header>
+            <div id="open-modal" class="modal-window">
+                <div>
+                    <a href="#" title="Close" class="modal-close">Close</a>
+                    <div class="modal-header">
+                        <h1>Login</h1>
+                    </div>  
+                        <form action="/" method="post">
+                            <label>
+                                Email Address<span class="req">*</span>
+                            </label>
+                            <div class="field-wrap">
+                                <input type="email" required autocomplete="off"/>
+                            </div>
+                            <label>
+                                Password<span class="req">*</span>
+                            </label>
+                            <div class="field-wrap">
+                                <input type="password" required autocomplete="off"/>
+                            </div>
+                            <p class="forgot"><a href="#">Forgot Password?</a></p>
+                            <button class="button">Log In</button>
+                        </form>
+                </div>
+            </div>
             <div class="hero_box">
                 <div class="hero_text">                
                     <h1>

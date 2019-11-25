@@ -169,16 +169,29 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 }
 .navigation ul {
     display: flex;
+    padding-top: 20px;
 }
 .navigation ul li {
     list-style: none;
     padding: 10px;
+    cursor: pointer;
+}
+.navigation ul li:first-child {
+    padding-right: 30px;
+    cursor: unset;
+}
+.navigation ul li:last-child {
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+.navigation ul li:last-child:hover {
+  background-color: #000;
 }
 .navigation ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
     width: 100%;
     display: inline-block;
     transition: all .3s ease;
@@ -187,7 +200,107 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
  .navigation.active {
  left: 0;
 }
-
+.modal-window {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 510px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2em;
+  background: #ffffff;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+  font-family: 'Open Sans', sans-serif;
+}
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 100%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
+.modal-close:hover {
+  color: black;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 20px;
+}
+input {
+  display: block;
+  margin: 5px 0px 20px 0px;
+  width: 100%;
+  line-height: 30px;
+  font-size: 15px;
+  border: none;
+  border-bottom: 2px solid #000;
+  text-align: center;
+}
+textarea:focus, input:focus{
+  outline: none;
+}
+label {
+  font-size: 1.1rem;
+  font-family: 'Open Sans', sans-serif;
+  align-items: center;
+}
+.field-wrap {
+  width: 80%;
+}
+.forgot {
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+.forgot a{
+  text-decoration: none;
+  color: #000;
+}
+.button { 
+  padding: 10px;
+  width: 100px;
+  font-size: 15px;
+  background-color: transparent;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #000;
+  color: #fff;
+}
    /* =============================================================================
   RWD
    ========================================================================== */
