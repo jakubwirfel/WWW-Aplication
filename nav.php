@@ -28,7 +28,7 @@
                             <label class="label_login">
                                 Password
                             </label>
-                            <div class="field-wrap">
+                            <div class="field-wrap_login">
                                 <input class="input_login" type="password" required autocomplete="off"/>
                             </div>
                             <p class="forgot_login"><a href="#">Forgot Password?</a></p>

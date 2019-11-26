@@ -96,12 +96,127 @@ li {
   margin: 0;
 }
 
+:root {
+  --font-primary: sans-serif;
+  --font-secondary: serif;
+  /* set base values */
+  --text-base-size: 1em;
+  --text-scale-ratio: 1.2;
+  /* type scale */
+  --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+  --text-sm: calc(1em / var(--text-scale-ratio));
+  --text-md: calc(1em * var(--text-scale-ratio));
+  --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  /* line-height */
+  --heading-line-height: 1.2;
+  --body-line-height: 1.4;
+}
+
+@media (max-width: 1400px) {
+  :root {
+    --text-base-size: 1.25em;
+    --text-scale-ratio: 1.25;
+  }
+}
+body {
+  font-size: var(--text-base-size);
+  font-family: var(--font-primary);
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, form legend {
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-xxs);
+  line-height: var(--heading-line-height);
+}
+
+/* text size */
+.text--xxxl {
+  font-size: var(--text-xxxl);
+}
+
+h1, .text--xxl {
+  font-size: var(--text-xxl);
+}
+
+h2, .text--xl {
+  font-size: var(--text-xl);
+}
+
+h3, .text--lg {
+  font-size: var(--text-lg);
+}
+
+h4, .text--md {
+  font-size: var(--text-md);
+}
+
+.text--sm, small {
+  font-size: var(--text-sm);
+}
+
+.text--xs {
+  font-size: var(--text-xs);
+}
+
+p {
+  line-height: var(--body-line-height);
+}
+
+a {
+  color: var(--color-link);
+}
+a:visited {
+  color: var(--color-link-visited);
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+.text-container h2, .text-container h3, .text-container h4 {
+  margin-top: var(--space-sm);
+}
+.text-container ul, .text-container ol, .text-container p {
+  margin-bottom: var(--space-md);
+}
+.text-container ul, .text-container ol {
+  list-style-position: outside;
+  padding-left: 24px;
+}
+.text-container ul {
+  list-style-type: disc;
+}
+.text-container ol {
+  list-style-type: decimal;
+}
+.text-container ul li, .text-container ol li {
+  line-height: var(--body-line-height);
+}
+.text-container em {
+  font-style: italic;
+}
+.text-container u {
+  text-decoration: underline;
+}
+
+/* utility classes */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 header {
   width: 100%;
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 999;
 }
 
 .hamburger {
@@ -281,6 +396,87 @@ textarea:focus, input:focus {
   color: #fff;
 }
 
+/*///////////////////////////////////////////////////////////////////
+SIGNUP-FORM
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+.signup_form {
+  height: 80%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans";
+}
+.signup_form .signup_form_group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-bottom: 30px;
+}
+.signup_form label {
+  font-weight: bold;
+  color: #fff;
+  padding-bottom: 10px;
+}
+.signup_form label::after {
+  content: "*";
+  padding-left: 5px;
+  color: #cb2431;
+}
+.signup_form .input_button {
+  font-size: 25px;
+  background-color: #E0E0E0;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding-left: 10px;
+  height: 30px;
+}
+.signup_form .pass_strenght {
+  font-size: 0.7em;
+  color: #fff;
+  padding-top: 10px;
+}
+.signup_form .email_pref {
+  font-weight: bold;
+  color: #fff;
+  padding-bottom: 10px;
+  font-size: 0.9em;
+}
+.signup_form .all_email_box {
+  font-size: 0.9em;
+}
+.signup_form .all_email_box::after {
+  content: none;
+}
+.signup_form .checkbox {
+  height: 15px;
+  width: 15px;
+}
+.signup_form .submit_button {
+  height: 60px;
+  background-color: #E0E0E0;
+  color: #24292e;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5em;
+  font-family: "Open Sans";
+  font-weight: bold;
+  cursor: pointer;
+}
+.signup_form .submit_button:hover {
+  background-color: #24292e;
+  color: #fff;
+  transition-duration: 0.4s;
+  border: 2px solid #fff;
+}
+.signup_form .services_box {
+  color: #fff;
+  padding-top: 40px;
+  font-size: 0.8em;
+}
+.signup_form .services_box a {
+  color: #0366d6;
+}
+
 .home_body {
   background: url(../assets/house_heroimage.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -299,10 +495,10 @@ textarea:focus, input:focus {
 }
 
 .hero_text {
-  font-size: 5rem;
+  font-size: 2.5rem;
   font-family: "Open Sans", sans-serif;
   letter-spacing: 5px;
-  width: 800px;
+  width: 850px;
   text-align: center;
   text-transform: uppercase;
   color: #fff;
@@ -342,6 +538,34 @@ textarea:focus, input:focus {
 }
 .body_join {
   background-color: #24292e;
+}
+
+.registration {
+  width: 100%;
+  height: calc(100% - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reg_box {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.reg_box h1 {
+  font-family: "Open Sans";
+  padding-top: 50px;
+  font-size: 1rem;
+  color: #E0E0E0;
+}
+.reg_box h2 {
+  font-family: "Open Sans";
+  font-size: 2.5em;
+  color: #ffffff;
+  padding-bottom: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */

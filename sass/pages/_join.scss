@@ -2,3 +2,29 @@
 .body_join { 
     background-color: #24292e;
 }
+.registration {
+    width: 100%;
+    height: calc(100% - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reg_box {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+        font-family: 'Open Sans';
+        padding-top: 50px;
+        font-size: 1rem;
+        color: #E0E0E0;
+    }
+    h2 {
+        font-family: 'Open Sans';
+        font-size: 2.5em;
+        color: #ffffff;
+        padding-bottom: 20px;
+    }
+}
