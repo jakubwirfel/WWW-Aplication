@@ -1,3 +1,4 @@
+<?php include ("./server/server.php") ?>
 <!DOCTYPE html>
 <html lang="pl">
     <head>

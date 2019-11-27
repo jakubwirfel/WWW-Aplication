@@ -1,3 +1,4 @@
+<?php include ("./server/server.php") ?>
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -14,33 +15,38 @@
 <body class="body_join">
     <main class="main_page">
         <?php include "nav.php"?>
+        <?php include('./server/errors.php'); ?>
         <section class="registration">
             <div class="reg_box">
                 <h1>Join Villa for Rent</h1>
                 <h2>Create your account</h2>
-                <form autocomplete="off" id="signup-form" class="signup_form" action="/" accept-charset="UTF-8"
+                <form autocomplete="off" id="signup-form" class="signup_form" action="./server/server.php" accept-charset="UTF-8"
                     method="post">
                     <div class="signup_form_group">
                         <label>Username</label>
-                        <input name="user" autocapitalize="off" autofocus="autofocus" required="required" type="text" id="user_login" autocomplete="off" spellcheck="false" class="input_button"/>
+                        <input name="username" autocapitalize="off" autofocus="autofocus" required="required" type="text" id="user_login" autocomplete="off" spellcheck="false" class="input_button" value="<?php echo $username; ?>"/>
                     </div>  
                     <div class="signup_form_group">
                         <label>Email address</label>
-                        <input name="email" autocapitalize="off" required="required" type="text" id="user_email" autocomplete="off" spellcheck="false" class="input_button"/>
+                        <input name="email" autocapitalize="off" required="required" type="email" id="user_email" autocomplete="off" spellcheck="false" class="input_button" value="<?php echo $email; ?>"/>
                     </div>  
                     <div class="signup_form_group">
                         <label>Password</label>
-                        <input name="password" autocapitalize="off" required="required" type="password" id="user_password" class="input_button"/>
+                        <input name="password_1" autocapitalize="off" required="required" type="password" id="user_password" class="input_button"/>
+                    </div>  
+                    <div class="signup_form_group">
+                        <label>Confirm password</label>
+                        <input name="password_2" autocapitalize="off" required="required" type="password" id="user_password" class="input_button"/>
                         <p class="pass_strenght">Make sure it's at least 15 characters OR at least 8 characters including a number and a lowercase letter.</p>
                     </div>  
                     <div class="signup_form_group">
                         <p class="email_pref">Email preferences</p>
                         <label class="all_email_box">
-                            <input type="checkbox" name="all_email" value="true" id="all_email" class="checkbox"/>
+                            <input type="checkbox" name="all_email" value="1" id="all_email" class="checkbox"/>
                             Send me occasional product updates, announcements, and offers.
                         </label>
                     </div>  
-                    <input type="submit" value="SUBMIT" class="submit_button" />
+                    <input type="submit" name="reg_user" value="REGISTER" class="submit_button" />
                     <p class="services_box">By creating an account, you agree to the <a href="#">Terms of Service</a>. For more information about Villa for Rent privacy practices, see the <a href="#">Villa for Rent Privacy Statement</a>. We'll occasionally send you account-related emails.</p>
                 </form>
             </div>
