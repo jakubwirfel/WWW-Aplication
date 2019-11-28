@@ -11,7 +11,7 @@
                     <div class="line line2"></div>
                     <div class="line line3"></div>
                 </div>
-            </header>
+</header>
             <div id="open-modal" class="modal-window">
                 <div>
                     <a href="#" title="Close" class="modal-close">Close</a>

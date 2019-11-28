@@ -1,4 +1,4 @@
-<?php include ("./server/server.php") ?>
+<?php include ("./server/server.php"); ?>
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -14,13 +14,13 @@
 
 <body class="body_join">
     <main class="main_page">
-        <?php include "nav.php"?>
-        <?php include('./server/errors.php'); ?>
+        <?php include ("nav.php");?>
+        <?php include ('./server/errors.php'); ?>
         <section class="registration">
             <div class="reg_box">
                 <h1>Join Villa for Rent</h1>
                 <h2>Create your account</h2>
-                <form autocomplete="off" id="signup-form" class="signup_form" action="./server/server.php" accept-charset="UTF-8"
+                <form autocomplete="off" id="signup-form" class="signup_form" action="join.php" accept-charset="UTF-8"
                     method="post">
                     <div class="signup_form_group">
                         <label>Username</label>
