@@ -62,6 +62,9 @@ SIGNUP-FORM
     flex-direction: column;
     justify-content: space-evenly;
     padding-bottom: 30px;
+    @include respond-to(large) {
+      padding-bottom: 10px;
+    }
   }
   label {
     font-weight: bold;
@@ -72,6 +75,9 @@ SIGNUP-FORM
       padding-left: 5px;
       color: #cb2431;
     }
+    @include respond-to(large) {
+      font-size: 0.8em;
+    }
   }
   .input_button {
     font-size: 25px;
@@ -80,20 +86,32 @@ SIGNUP-FORM
     border-radius: 5px;
     padding-left: 10px;
     height: 30px;
+    @include respond-to(large) {
+      font-size: 0.8em;
+    }
   }
   .pass_strenght {
     font-size: 0.7em;
     color: #fff;
     padding-top: 10px;
+    @include respond-to(large) {
+      font-size: 0.6em;
+    }
   }
   .email_pref {
     font-weight: bold;
     color: #fff;
     padding-bottom: 10px;
     font-size: 0.9em;
+    @include respond-to(large) {
+      font-size: 0.8em;
+    }
   }
   .all_email_box {
     font-size: 0.9em;
+    @include respond-to(large) {
+      font-size: 0.6em;
+    }
     &::after {
       content: none;
     } 
@@ -118,11 +136,18 @@ SIGNUP-FORM
       transition-duration: 0.4s;
       border: 2px solid #fff;
     }
+    @include respond-to(large) {
+      height: 40px;
+    }
   }
   .services_box {
     color: #fff;
     padding-top: 40px;
     font-size: 0.8em;
+    @include respond-to(large) {
+      font-size: 0.6em;
+      padding-top: 20px;
+    }
     a {
       color: #0366d6;
     }

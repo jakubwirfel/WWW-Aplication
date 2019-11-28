@@ -46,7 +46,7 @@
   }
   @include respond-to(large) {
     .hero_text  {
-        font-size: 3rem;
+        font-size: 2rem;
       }
     .hero_button {
         width: 250px;
