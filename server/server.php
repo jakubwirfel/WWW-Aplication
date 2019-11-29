@@ -20,7 +20,15 @@ if (isset($_POST['reg_user'])) {
   if (empty($email)) { array_push($errors, "Email is required"); }
   if (empty($password_1)) { array_push($errors, "Password is required"); }
   if ($password_1 != $password_2) {array_push($errors, "The two passwords do not match"); }
- 
+
+  // Validate password strength by CODEXWORLD
+  $uppercase = preg_match('@[A-Z]@', $password_1);
+  $lowercase = preg_match('@[a-z]@', $password_1);
+  $number    = preg_match('@[0-9]@', $password_1);
+  $specialChars = preg_match('@[^\w]@', $password_1);
+  if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password_1) < 8) {
+    array_push($errors, 'Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.');
+  }
 
   $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
   $result = mysqli_query($db, $user_check_query);
@@ -44,7 +52,7 @@ if (isset($_POST['reg_user'])) {
     mysqli_query($db, $query);
     
   	$_SESSION['username'] = $username;
-    
+    $_SESSION['confirm'] = "start";
     header('location: ./index.php');
   }
 }
@@ -67,8 +75,8 @@ if (isset($_POST['login_user'])) {
 
     if (mysqli_num_rows($results) == 1) {
       $_SESSION['username'] = $username;
-      $_SESSION['success'] = "You are now logged in";
-      header('location: gdf.php');
+      $_SESSION['confirm'] = "start";
+      header('location: index.php');
     }else {
       array_push($errors, "Wrong username/password combination");
     }

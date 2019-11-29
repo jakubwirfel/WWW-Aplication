@@ -233,18 +233,6 @@ header {
   z-index: 999;
 }
 
-.hamburger {
-  display: none;
-}
-
-.line {
-  width: 40px;
-  height: 7px;
-  background-color: #fff;
-  margin-bottom: 5px;
-  border-radius: 5px;
-}
-
 .navigation {
   transition: all 0.6s ease-in-out;
   display: flex;
@@ -254,44 +242,89 @@ header {
   height: 100px;
 }
 
-.navigation ul {
-  display: flex;
-  padding-top: 20px;
-}
-
-.navigation ul li {
-  list-style: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.navigation ul li:first-child {
-  padding-right: 30px;
-  cursor: unset;
-}
-
-.navigation ul li:last-child {
-  border: 2px solid #fff;
-  border-radius: 5px;
-}
-
-.navigation ul li:last-child:hover {
-  background-color: #000;
-}
-
-.navigation ul li a {
+a {
   text-decoration: none;
-  color: #fff;
-  font-size: 1.1rem;
-  line-height: 1.1rem;
-  width: 100%;
-  display: inline-block;
-  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
   font-family: "Open Sans", sans-serif;
 }
 
-.navigation.active {
+li {
+  color: #fff;
+  display: block;
+  float: left;
+  padding: 0.7rem;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
+
+li a {
+  color: #fff;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+li a i {
+  padding-left: 10px;
+}
+
+li:hover,
+li:focus-within {
+  cursor: pointer;
+}
+
+li:focus-within a {
+  outline: none;
+}
+
+ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  min-width: 7rem;
+  position: absolute;
+  transition: all 0.5s ease;
+  top: 2.5rem;
   left: 0;
+  display: none;
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+ul li ul li {
+  clear: both;
+  width: 100%;
+  border-top: 1px solid #fff;
+}
+ul li ul li a {
+  font-size: 1em;
+}
+ul li ul li:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #000;
+}
+
+.hide {
+  display: none;
+}
+
+.border_last {
+  border: 2px solid #fff;
+  padding: 4px 10px 4px 10px;
+  border-radius: 10px;
+}
+.border_last:hover {
+  background-color: #000;
 }
 
 .modal-window {

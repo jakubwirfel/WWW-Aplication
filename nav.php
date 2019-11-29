@@ -2,8 +2,24 @@
             <a href="index.php"><div class="logo"><img src="assets/logo.png"/></div></a>
                 <nav class="navigation">
                     <ul>
-                        <li><a href="#open-modal">Sign in</a></li>
-                        <li><a href="join.php">Sign up</a></li>
+                        <?php  if (isset($_SESSION['confirm'])) : ?>
+                            <li><a href="#" aria-haspopup="true"><?=$_SESSION['username']?><i class="fas fa-angle-down"></i></a>
+                                <ul class="dropdown" aria-label="submenu">
+                                    <li><a href="#">Your profile</a></li>
+                                    <li><a hred="#">Reservations</a></li>
+                                    <li><a href="#">Help</a></li>
+                                    <li><a href="#">Settings</a></li>
+                                    <li><a href="#">Sign out</a></li>
+                                </ul>
+                            </li>
+                        <?php endif ?>
+                        <?php  if (isset($_SESSION['confirm'])) : ?>
+                            <li class="hide"><a href="#open-modal">Sign in</a></li>
+                            <li class="hide" ><a href="join.php">Sign up</a></li>
+                        <?php else : ?>
+                            <li><a href="#open-modal">Sign in</a></li>
+                            <li><a href="join.php" class="border_last">Sign up</a></li>
+                        <?php endif ?>
                     </ul>
                 </nav>
         </header>
