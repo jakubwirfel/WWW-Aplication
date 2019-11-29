@@ -6,11 +6,8 @@
     background: #f2dede; 
     border-radius: 5px; 
     text-align: left;
-    position: fixed;
-    top: 10%;
+    position: absolute;
+    top: 60px;
     left: 50%;
     transform: translate(-50%, -50%);
-    @include respond-to(large) {
-      top: 15%;
-    }
   }

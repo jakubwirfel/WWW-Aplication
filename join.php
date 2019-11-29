@@ -42,7 +42,8 @@
                     <div class="signup_form_group">
                         <p class="email_pref">Email preferences</p>
                         <label class="all_email_box">
-                            <input type="checkbox" name="all_email" value="1" id="all_email" class="checkbox"/>
+                            <input type="hidden" value="0" name="all_email" />
+                            <input type="checkbox" name="all_email" value="1" id="all_email"  class="checkbox"/>
                             Send me occasional product updates, announcements, and offers.
                         </label>
                     </div>  
