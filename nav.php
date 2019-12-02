@@ -9,7 +9,7 @@
                                     <li><a hred="#">Reservations</a></li>
                                     <li><a href="#">Help</a></li>
                                     <li><a href="#">Settings</a></li>
-                                    <li><a href="#">Sign out</a></li>
+                                    <li><a href="index.php?logout='1'">Sign out</a></li>
                                 </ul>
                             </li>
                         <?php endif ?>

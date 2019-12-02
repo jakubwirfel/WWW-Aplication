@@ -37,7 +37,7 @@
                     <div class="signup_form_group">
                         <label>Confirm password</label>
                         <input name="password_2" autocapitalize="off" required="required" type="password" id="user_password" class="input_button"/>
-                        <p class="pass_strenght">Make sure it's at least 15 characters OR at least 8 characters including a number and a lowercase letter.</p>
+                        <p class="pass_strenght">Make sure it's at least 8 characters including a number, special chars and lowercase, uppercase letter.</p>
                     </div>  
                     <div class="signup_form_group">
                         <p class="email_pref">Email preferences</p>

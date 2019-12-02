@@ -53,7 +53,7 @@ if (isset($_POST['reg_user'])) {
     
   	$_SESSION['username'] = $username;
     $_SESSION['confirm'] = "start";
-    header('location: ./index.php');
+    header('location: ./main.php');
   }
 }
 
@@ -76,10 +76,15 @@ if (isset($_POST['login_user'])) {
     if (mysqli_num_rows($results) == 1) {
       $_SESSION['username'] = $username;
       $_SESSION['confirm'] = "start";
-      header('location: index.php');
+      header('location: main.php');
     }else {
       array_push($errors, "Wrong username/password combination");
     }
   }
+}
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['username']);
+  header('location: index.php');
 }
 ?>
