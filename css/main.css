@@ -6,8 +6,19 @@ html, body {
 
 .main_page {
   height: 100%;
-  width: calc(100% - 200px);
+  width: calc(100% - 600px);
   margin: auto;
+  position: absolute;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+@media (max-width: 1400px) {
+  .main_page {
+    width: calc(100% - 100px);
+  }
 }
 
 /* =============================================================================
@@ -225,12 +236,18 @@ b, strong {
 }
 
 header {
-  width: 100%;
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 999;
+  position: fixed;
+  width: calc(100% - 600px);
+}
+@media (max-width: 1400px) {
+  header {
+    width: calc(100% - 100px);
+  }
 }
 
 .navigation {
@@ -565,6 +582,117 @@ SIGNUP-FORM
   color: #0366d6;
 }
 
+/*///////////////////////////////////////////////////////////////////
+FILTER-FORM
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+.filter_form {
+  height: 80%;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans";
+  color: #fff;
+}
+.filter_form .filter_group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-bottom: 30px;
+}
+.filter_form .filter_group label {
+  font-weight: bold;
+  color: #fff;
+  padding-bottom: 10px;
+}
+@media (max-width: 1400px) {
+  .filter_form .filter_group label {
+    font-size: 0.8em;
+  }
+}
+.filter_form .filter_group .input_button {
+  font-size: 1em;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding-left: 10px;
+  height: 30px;
+  color: #fff;
+}
+@media (max-width: 1400px) {
+  .filter_form .filter_group .input_button {
+    font-size: 0.8em;
+  }
+}
+.filter_form .submit_button {
+  height: 40px;
+  background-color: #fff;
+  color: #24292e;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3em;
+  font-family: "Open Sans";
+  font-weight: bold;
+  cursor: pointer;
+}
+.filter_form .submit_button:hover {
+  background-color: #24292e;
+  color: #fff;
+  transition-duration: 0.4s;
+  border: 2px solid #fff;
+}
+@media (max-width: 1400px) {
+  .filter_form .submit_button {
+    height: 40px;
+  }
+}
+.filter_form .filter_group_row {
+  display: flex;
+  flex-direction: rows;
+  justify-content: center;
+  width: 100%;
+}
+.filter_form .filter_group_row .filter_group_row_box {
+  width: 100%;
+  padding-bottom: 30px;
+}
+.filter_form .filter_group_row .filter_group_row_box label {
+  font-weight: bold;
+  color: #fff;
+  padding-bottom: 10px;
+}
+@media (max-width: 1400px) {
+  .filter_form .filter_group_row .filter_group_row_box label {
+    font-size: 0.8em;
+  }
+}
+.filter_form .filter_group_row .filter_group_row_box .input_row {
+  font-size: 1em;
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding-left: 10px;
+  height: 30px;
+  width: 100%;
+  color: #fff;
+  margin-top: 10px;
+  font-family: "Open Sans";
+}
+@media (max-width: 1400px) {
+  .filter_form .filter_group_row .filter_group_row_box .input_row {
+    font-size: 0.8em;
+  }
+}
+.filter_form .filter_group_row .filter_group_row_box .input_row option {
+  background-color: #000;
+}
+.filter_form .filter_group_row .filter_group_row_box .left {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.filter_form .filter_group_row .filter_group_row_box .right {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 .home_body {
   background: url(../assets/house_heroimage.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -579,7 +707,7 @@ SIGNUP-FORM
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: calc(100% - 100px);
+  height: 100%;
 }
 
 .hero_text {
@@ -668,6 +796,50 @@ SIGNUP-FORM
 
 .main_body {
   background-color: #24292e;
+}
+
+.bg_img {
+  position: relative;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  z-index: -1;
+  background-image: url(../assets/bg.jpg);
+  background-position: 50% 40%;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.filter_box {
+  height: 600px;
+  width: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  top: 100px;
+}
+.filter_box .filter {
+  background: rgba(0, 0, 0, 0.9);
+  width: 450px;
+  height: 500px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.filter_box .filter h1 {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+  color: #fff;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.test {
+  height: 2000px;
+  width: 100px;
 }
 
 /*# sourceMappingURL=main.css.map */
