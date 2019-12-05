@@ -15,7 +15,7 @@
     <div class="bg_img"></div>
         <main class="main_page">
             <?php include "nav.php"?>
-            <div class="filter_box">
+            <section class="filter_box">
                 <div class="filter">
                 <h1>Rent your heaven on Earth</h1>
                 <form autocomplete="off" id="filter-form" class="filter_form" action="/" accept-charset="UTF-8" method="post">
@@ -62,8 +62,68 @@
                 <input type="submit" name="filter" value="SEARCH" class="submit_button" />
                 </form>
                 </div>
-            </div>
-            <div class="test"></div>
+            </section>
+            <section class="content_change">
+                    <div class="title">
+                        <h1>Villas for you</h1>
+                    </div>
+                    <div class="sort">
+                        <p>Sort by:</p>
+                        <div class="dropdown_box">
+                            <span>--<i class="fas fa-angle-down"></i></span>
+                            <div class="dropdown-content">
+                                <a href="#">--</a>
+                                <a href="#">Popular</a>
+                                <a href="#">Lowest price</a>
+                                <a href="#">Highest price</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map_show_box">
+                       <span>Show map</span>
+                       <i class="fas fa-map"></i>
+                    </div>
+            </section>
+            <section class="map" id="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d65178314.71238159!2d12.084603761196673!3d4.379495949476939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1575569956335!5m2!1spl!2spl" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </section>
+            <section class="hotels grid_box">
+                <article>
+                    <figure class="img_hotel">
+                        <img src="./assets/villa.jpg"/>
+                    </figure>
+                    <div class="hotel_box">
+                        <div class="hotel_location">
+                            <p>Hungary Dalmatia</p> | <p>Coast</p>
+                        </div>
+                        <div class="hotel_name">
+                            <h1>Villa Perfect</h1>
+                        </div>
+                    </div>
+                </article>
+                <article>2</article>
+                <article>3</article>
+                <article>4</article>
+                <article>5</article>
+                <article>6</article>
+                <article>7</article>
+                <article>8</article>
+                <article>9</article>
+                <article>9</article>
+                <article>9</article>
+                <article>9</article>
+                <article>9</article>
+                <article>9</article>
+                <article>9</article>
+                <article>9</article>
+                <article>9</article>
+            </section>
         </main>
+        <script type="text/javascript">
+            window.onscroll = () => {
+                const nav = document.querySelector('#navbar');
+                if(this.scrollY <= 1) nav.className = ''; else nav.className = 'scroll';
+            };
+        </script>
     </body>
 </html>

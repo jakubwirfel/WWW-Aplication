@@ -239,13 +239,28 @@ header {
   height: 100px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  z-index: 999;
+  position: fixed;
+  left: 0;
+  width: 100%;
+}
+header.scroll {
+  background-color: rgba(36, 41, 46, 0.9);
+  transition: background-color 600ms linear;
+}
+
+.nav_box {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   z-index: 999;
   position: fixed;
-  width: calc(100% - 600px);
+  width: calc(100% - 200px);
+  height: 100px;
 }
 @media (max-width: 1400px) {
-  header {
+  .nav_box {
     width: calc(100% - 100px);
   }
 }
@@ -807,8 +822,6 @@ FILTER-FORM
   z-index: -1;
   background-image: url(../assets/bg.jpg);
   background-position: 50% 40%;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
 }
 
 .filter_box {
@@ -837,9 +850,143 @@ FILTER-FORM
   padding-bottom: 50px;
 }
 
-.test {
-  height: 2000px;
-  width: 100px;
+.content_change {
+  height: 150px;
+  width: 100%;
+  position: relative;
+  top: 125px;
+}
+.content_change .title {
+  position: absolute;
+  top: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2em;
+  color: #fff;
+}
+.content_change .sort {
+  position: absolute;
+  bottom: 0px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  color: #fff;
+  width: 300px;
+}
+.content_change .sort p {
+  display: inline-block;
+  padding-right: 10px;
+}
+.content_change .sort .dropdown_box {
+  display: inline-block;
+  min-width: 200px;
+  line-height: 40px;
+  padding: 0 15px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.content_change .sort .dropdown_box span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+}
+.content_change .sort .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 200px;
+  border: 1px solid #fff;
+  right: 29px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.content_change .sort .dropdown-content a {
+  color: black;
+  padding: 0px 20px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.9rem;
+}
+.content_change .sort .dropdown-content a:hover {
+  background-color: rgba(36, 41, 46, 0.9);
+  color: #fff;
+}
+.content_change .sort .dropdown_box:hover .dropdown-content {
+  display: block;
+}
+.content_change .map_show_box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  min-width: 150px;
+  line-height: 40px;
+  padding: 0px 20px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: #24292e;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
+.map {
+  height: 400px;
+  width: 100%;
+  position: relative;
+  top: 200px;
+  background-color: #fff;
+  display: block;
+}
+
+.grid_box {
+  width: 100%;
+  position: relative;
+  top: 250px;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 3em;
+}
+
+article {
+  color: #fff;
+  height: 450px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+}
+article .img_hotel {
+  width: 100%;
+  height: 200px;
+}
+article .img_hotel img {
+  height: 100%;
+  width: 100%;
+}
+article .hotel_box {
+  height: 250px;
+  width: 100%;
+  padding: 10px 20px 20px 20px;
+  color: #24292e;
+  position: relative;
+}
+article .hotel_box .hotel_location {
+  width: 100%;
+  height: 20px;
+}
+article .hotel_box .hotel_location p {
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9em;
+}
+article .hotel_box .hotel_name {
+  width: 100%;
+  font-size: 0.7em;
+  padding: 5px 0px;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=main.css.map */

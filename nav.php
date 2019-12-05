@@ -1,5 +1,6 @@
-        <header>
-            <a href="index.php"><div class="logo"><img src="assets/logo.png"/></div></a>
+        <header id="navbar">
+            <div class="nav_box">
+                <a href="index.php"><div class="logo"><img src="assets/logo.png"/></div></a>
                 <nav class="navigation">
                     <ul>
                         <?php  if (isset($_SESSION['confirm'])) : ?>
@@ -22,6 +23,7 @@
                         <?php endif ?>
                     </ul>
                 </nav>
+            </div>
         </header>
         <?php include ('./server/errors.php'); ?>
             <div id="open-modal" class="modal-window">
