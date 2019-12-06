@@ -6,7 +6,7 @@ html, body {
 
 .main_page {
   height: 100%;
-  width: calc(100% - 600px);
+  width: calc(100% - 800px);
   margin: auto;
   position: absolute;
   top: 0;
@@ -480,7 +480,7 @@ SIGNUP-FORM
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
 .signup_form {
   height: 80%;
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   font-family: "Open Sans";
@@ -946,7 +946,7 @@ FILTER-FORM
   top: 250px;
   display: grid;
   grid-auto-rows: auto;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 3em;
 }
 
@@ -987,6 +987,66 @@ article .hotel_box .hotel_name {
   font-size: 0.7em;
   padding: 5px 0px;
   text-transform: uppercase;
+}
+article .hotel_box .hotel_info_box {
+  width: 100%;
+  height: 120px;
+  left: 0;
+  top: 20px;
+  position: relative;
+}
+article .hotel_box .hotel_info_box .hotel_area {
+  position: absolute;
+  height: 100%;
+  width: 60%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+article .hotel_box .hotel_info_box .hotel_area div {
+  height: 40px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+}
+article .hotel_box .hotel_info_box .hotel_area div img {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  left: -25px;
+}
+article .hotel_box .hotel_info_box .hotel_area div span {
+  position: absolute;
+  left: 45px;
+}
+article .hotel_box .hotel_info_box .hotel_price {
+  border-left: 2px solid #24292e;
+  position: absolute;
+  height: 100%;
+  width: 40%;
+  right: 0;
+  padding-left: 20px;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+article .hotel_box .hotel_info_box .hotel_price h1 {
+  font-size: 1em;
+}
+article .hotel_box .hotel_info_box .hotel_price .daily_contet,
+article .hotel_box .hotel_info_box .hotel_price .weekly_contet {
+  display: block;
+  padding-top: 10px;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+article .hotel_box .hotel_info_box .hotel_price span {
+  display: block;
+  font-size: 0.9em;
 }
 
 /*# sourceMappingURL=main.css.map */

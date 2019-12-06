@@ -99,6 +99,33 @@
                         <div class="hotel_name">
                             <h1>Villa Perfect</h1>
                         </div>
+                        <div class="hotel_info_box">
+                            <div class="hotel_area">
+                                <div>
+                                    <img src="./assets/living_area.svg" alt="living area"/>
+                                    <span>Living area: 100 m2</span>
+                                </div>
+                                <div>
+                                    <img src="./assets/persons.svg" alt="persons"/>
+                                    <span>Persons: 9</span>
+                                </div>
+                                <div>
+                                    <img src="./assets/bedrooms.svg" alt="bedrooms"/>
+                                    <span>Bedrooms: 4</span>
+                                </div>
+                                <div>
+                                    <img src="./assets/bathrooms.svg" alt="bathrooms"/>
+                                    <span>Bathrooms: 4</span>
+                                </div>
+                            </div>
+                            <div class="hotel_price">
+                                <h1>FROM</h1>
+                                    <span class="daily_contet">350$</span>
+                                    <span>DAILY</span>
+                                    <span class="weekly_contet">2.450$</span>
+                                    <span>WEEKLY</span>
+                            </div>
+                        </div>
                     </div>
                 </article>
                 <article>2</article>
