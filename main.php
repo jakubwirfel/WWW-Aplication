@@ -90,7 +90,7 @@
             <section class="hotels grid_box">
                 <article>
                     <figure class="img_hotel">
-                        <img src="./assets/villa.jpg"/>
+                        <img src="./hotels_img/villa-perfect-1.jpg"/>
                     </figure>
                     <div class="hotel_box">
                         <div class="hotel_location">
