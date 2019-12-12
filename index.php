@@ -13,7 +13,7 @@
     </head>
     <body class="home_body">
         <main class="main_page">
-            <?php include "nav.php"?>
+            <?php include ("./php_components/nav.php")?>
             <div class="hero_box">
                 <div class="hero_text">                
                     <h1>

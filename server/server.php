@@ -7,7 +7,7 @@ $email_preferences = "";
 $errors = array(); 
 
 $db = mysqli_connect('localhost', 'root', '', 'villa_for_rent');
-
+/*=====================REGISTRTION================== */
 if (isset($_POST['reg_user'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
@@ -56,7 +56,7 @@ if (isset($_POST['reg_user'])) {
     header('location: ./main.php');
   }
 }
-
+/*=====================LOGIN================== */
 if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
@@ -82,6 +82,7 @@ if (isset($_POST['login_user'])) {
     }
   }
 }
+/*=====================LOGOUT================== */
 if (isset($_GET['logout'])) {
   session_destroy();
   unset($_SESSION['username']);

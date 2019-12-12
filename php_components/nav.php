@@ -25,7 +25,7 @@
                 </nav>
             </div>
         </header>
-        <?php include ('./server/errors.php'); ?>
+        <?php include ('./php_components/errors.php'); ?>
             <div id="open-modal" class="modal-window">
                 <div>
                     <a href="#" title="Close" class="modal-close">Close</a>

@@ -14,8 +14,8 @@
 
 <body class="body_join">
     <main class="main_page">
-        <?php include ("nav.php");?>
-        <?php include ('./server/errors.php'); ?>
+        <?php include ("./php_components/nav.php");?>
+        <?php include ('./php_components/errors.php'); ?>
         <section class="registration">
             <div class="reg_box">
                 <h1>Join Villa for Rent</h1>
