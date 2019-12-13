@@ -949,6 +949,7 @@ FILTER-FORM
   grid-auto-rows: auto;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 3em;
+  padding-bottom: 200px;
 }
 
 article {

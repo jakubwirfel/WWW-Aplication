@@ -23,7 +23,7 @@
             <div class="filter">
                 <h1>Rent your heaven on Earth</h1>
                 <form autocomplete="off" id="filter-form" class="filter_form" action="main.php" accept-charset="UTF-8"
-                    method="post">
+                    method="GET">
                     <div class="filter_group">
                         <label>Destination</label>
                         <input name="destination" type="text" id="destination" class="input_button"
