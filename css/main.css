@@ -356,7 +356,7 @@ ul li ul li:hover {
   border-radius: 10px;
 }
 .border_last:hover {
-  background-color: #000;
+  background-color: #24292e;
 }
 
 .modal-window {
@@ -648,6 +648,12 @@ FILTER-FORM
   font-family: "Open Sans";
   font-weight: bold;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filter_form .submit_button:last-child {
+  margin-top: 20px;
 }
 .filter_form .submit_button:hover {
   background-color: #24292e;
@@ -746,13 +752,13 @@ FILTER-FORM
   align-items: center;
   font-family: "Open Sans", sans-serif;
   text-decoration: none;
-  color: #000;
+  color: #24292e;
   letter-spacing: 5px;
   font-size: 1.5rem;
 }
 
 .hero_button:hover {
-  background-color: #000;
+  background-color: #24292e;
   color: #fff;
   transition-duration: 0.4s;
 }

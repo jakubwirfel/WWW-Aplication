@@ -18,7 +18,6 @@
     <div class="bg_img"></div>
     <main class="main_page">
         <?php include ("./php_components/nav.php")?>
-        <?php include ('./php_components/errors.php'); ?>
         <section class="filter_box">
             <div class="filter">
                 <h1>Rent your heaven on Earth</h1>
@@ -67,6 +66,7 @@
                         </div>
                     </div>
                     <input type="submit" name="filter" value="SEARCH" class="submit_button" />
+                    <a href="main.php?reset='1'" class="submit_button">RESET FILTER</a>
                 </form>
             </div>
         </section>
@@ -79,7 +79,7 @@
                 <div class="dropdown_box">
                     <span>--<i class="fas fa-angle-down"></i></span>
                     <div class="dropdown-content">
-                        <a href="main.php?unset()">--</a>
+                        <a href="main.php?normal='1'">--</a>
                         <a href="main.php?lowest='1'">Lowest price</a>
                         <a href="main.php?highest='1'">Highest price</a>
                     </div>

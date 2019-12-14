@@ -199,6 +199,12 @@ FILTER-FORM
     font-family: 'Open Sans';
     font-weight: bold;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:last-child {
+      margin-top: 20px;
+    }
     &:hover {
       background-color: #24292e;
       color: #fff;

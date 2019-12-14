@@ -1,23 +1,5 @@
 <?php 
-$location = " ";
-$persons = " ";
-    if (isset($_GET['lowest'])) {
-        $query = "SELECT * FROM hotels ORDER BY price ASC";
-        $results = mysqli_query($db, $query);
-    } elseif (isset($_GET['highest'])){
-        $query = "SELECT * FROM hotels ORDER BY price DESC";
-        $results = mysqli_query($db, $query);
-    }else {
-        $query = "SELECT * FROM hotels";
-        $results = mysqli_query($db, $query);
-    }
-    if (isset($_SESSION['filter']) && (isset($_GET['highest']))) {
-        echo $location;
-        unset($_SESSION['filter']);
-        unset($_GET['highest']);
-    }
     if (isset($_GET['filter'])) {
-        $_SESSION['filter'] = "start";
         $location = $_GET['destination'];
         $checkin = $_GET['checkin'];
         $checkout = $_GET['checkout'];
@@ -25,10 +7,48 @@ $persons = " ";
         $children = $_GET['children'];
 
         $persons = $adults + $children;
-
+        $_SESSION["hotel_location"] = $location;
+        $_SESSION["hotel_persons"] = $persons;
         $query = "SELECT * FROM hotels WHERE location LIKE '$location%' AND persons >= $persons";
         $results = mysqli_query($db, $query);
+    } else {
+        $query = "SELECT * FROM hotels";
+        $results = mysqli_query($db, $query);
     }
+
+    if (isset($_GET['reset'])) {
+        unset($_SESSION["hotel_location"]);
+        unset($_SESSION["hotel_persons"]);
+        $query = "SELECT * FROM hotels";
+        $results = mysqli_query($db, $query);
+    } elseif (isset($_GET['reset']) || isset($_GET['lowest'])) {
+        $query = "SELECT * FROM hotels ORDER BY `price` ASC";
+        $results = mysqli_query($db, $query);
+    } elseif (isset($_GET['reset']) || isset($_GET['highest'])) {
+        $query = "SELECT * FROM hotels ORDER BY `price` DESC";
+        $results = mysqli_query($db, $query);
+    } elseif (isset($_GET['reset']) || isset($_GET['normal'])) {
+        $query = "SELECT * FROM hotels";
+        $results = mysqli_query($db, $query);
+    }
+
+    if (isset($_SESSION["hotel_location"]) && (isset($_GET['highest']))) {
+        $location = $_SESSION["hotel_location"];
+        $persons = $_SESSION["hotel_persons"];
+        $query = "SELECT * FROM hotels WHERE location LIKE '$location%' AND persons >= $persons ORDER BY `price` DESC";
+        $results = mysqli_query($db, $query);
+    } elseif (isset($_SESSION["hotel_location"]) && (isset($_GET['lowest']))) {
+        $location = $_SESSION["hotel_location"];
+        $persons = $_SESSION["hotel_persons"];
+        $query = "SELECT * FROM hotels WHERE location LIKE '$location%' AND persons >= $persons ORDER BY `price` ASC";
+        $results = mysqli_query($db, $query);
+    } elseif (isset($_SESSION["hotel_location"]) && (isset($_GET['normal']))) {
+        $location = $_SESSION["hotel_location"];
+        $persons = $_SESSION["hotel_persons"];
+        $query = "SELECT * FROM hotels WHERE location LIKE '$location%' AND persons >= $persons";
+        $results = mysqli_query($db, $query);
+    } 
+
     while ($row = mysqli_fetch_array($results) ) { 
 ?>
 <article>
