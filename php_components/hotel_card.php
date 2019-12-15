@@ -51,19 +51,19 @@
 
     while ($row = mysqli_fetch_array($results) ) { 
 ?>
-<article>
-    <figure class="img_hotel">
+<a href="./hotel.php"><article class="hotel_card">
+    <figure class="img_card_hotel">
         <img src="<?php echo $row['main_img']?>" alt="<?php echo $row['name']?> picture"/>
     </figure>
-    <div class="hotel_box">
-        <div class="hotel_location">
+    <div class="hotel_card_box">
+        <div class="hotel_card_location">
             <p><?php echo $row['location']?></p> | <p><?php echo $row['place']?></p>
         </div>
-        <div class="hotel_name">
+        <div class="hotel_card_name">
             <h1><?php echo $row['name']?></h1>
         </div>
-        <div class="hotel_info_box">
-            <div class="hotel_area">
+        <div class="hotel_card_info_box">
+            <div class="hotel_card_area">
                 <div>
                     <img src="./assets/living_area.svg" alt="living area" />
                     <span>Living area: <?php echo $row['l_area']?>m2</span>
@@ -81,7 +81,7 @@
                     <span>Bathrooms: <?php echo $row['bathrooms']?></span>
                 </div>
             </div>
-            <div class="hotel_price">
+            <div class="hotel_card_price">
                 <h1>FROM</h1>
                 <span class="daily_contet"><?php echo $row['price']?>$</span>
                 <span>DAILY</span>
@@ -90,5 +90,5 @@
             </div>
         </div>
     </div>
-</article>
+</article></a>
 <?php   } ?>
