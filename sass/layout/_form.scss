@@ -1,3 +1,4 @@
+@import '../utils/mixins';
 textarea:focus, input:focus{
     outline: none;
   }
@@ -163,6 +164,9 @@ FILTER-FORM
   flex-direction: column;
   font-family: 'Open Sans';
   color: #fff;
+  @include respond-to(large) {
+    width: 350px;
+  }
   .filter_group {
     display: flex;
     flex-direction: column;
@@ -202,6 +206,9 @@ FILTER-FORM
     display: flex;
     align-items: center;
     justify-content: center;
+    @include respond-to(large) {
+      font-size: 1.1em;
+    }
     &:last-child {
       margin-top: 20px;
     }

@@ -131,10 +131,16 @@
                 align-items: center;
                 p {
                     font-size: 1.3em;
+                    @include respond-to(large) {
+                        font-size: 1em;
+                    }
                 }
                 span {
                     font-size: 1.8em;
                     font-weight: bold;
+                    @include respond-to(large) {
+                        font-size: 1.6em;
+                    }
                 }
             }
             .reservation_button {
@@ -144,6 +150,9 @@
                 position: relative;
                 border: none;
                 transition: 0.5s;
+                @include respond-to(large) {
+                    font-size: 1.8em;
+                }
                 &:hover {
                     background-color: #24292e;
                     color: #fff;
@@ -176,6 +185,9 @@
         text-align: center;
         font-family: 'Open Sans', sans-serif;
         font-size: 3em;
+        @include respond-to(large) {
+            font-size: 2.5em;
+        }
         span {
             font-style: italic;
         }
@@ -201,6 +213,9 @@
             color: #24292e;
             font-family: 'Open Sans', sans-serif;
             font-size: 1em;
+            @include respond-to(large) {
+                font-size: 0.8em;
+            }
         }
     }
 }
@@ -212,7 +227,9 @@
     font-style: italic;
     font-family: 'Open Sans', sans-serif;
     padding-top: 100px;
-    
+    @include respond-to(large) {
+        font-size: 0.9em;
+    }
 }
 hr {
     border: 2px solid #fff;
