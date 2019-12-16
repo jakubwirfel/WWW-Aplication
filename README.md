@@ -52,5 +52,7 @@ the site worked better.
 > Jakub Wirfel
 ## Thanks
 > Shadow - help with PHP on main.php
+
 > Karina and testers
+
 > Awa - help to find impossible to find error
