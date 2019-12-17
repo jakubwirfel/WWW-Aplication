@@ -48,10 +48,9 @@
         $query = "SELECT * FROM hotels WHERE location LIKE '$location%' AND persons >= $persons";
         $results = mysqli_query($db, $query);
     } 
-
     while ($row = mysqli_fetch_array($results) ) { 
 ?>
-<a href="./hotel.php"><article class="hotel_card">
+<a href="./hotel.php?hotel_name=<?php echo $row['name']?>"><article class="hotel_card">
     <figure class="img_card_hotel">
         <img src="<?php echo $row['main_img']?>" alt="<?php echo $row['name']?> picture"/>
     </figure>

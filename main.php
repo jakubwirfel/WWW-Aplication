@@ -1,4 +1,6 @@
-<?php include ("./server/server.php") ?>
+<?php
+ ob_start(); 
+include ("./server/server.php") ?>
 <!DOCTYPE html>
 <html lang="pl">
 
