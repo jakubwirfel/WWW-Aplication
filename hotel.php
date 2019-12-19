@@ -89,7 +89,7 @@ while ($row = mysqli_fetch_array($results) ) {
                     <div class="price-holder">
                         <p>FROM <span> <?php echo $row['price']*7?>$ </span> WEEKLY</p>
                     </div>
-                    <a href="#" class="button-holder reservation_button">
+                    <a href="reservation.php?hotel_name=<?php echo $row['name']?>" class="button-holder reservation_button">
                         Reserve
                     </a>
             </div>
