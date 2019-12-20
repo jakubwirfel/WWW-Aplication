@@ -829,9 +829,15 @@ RESERVATION-FORM
 .reservation_form .privacy_policy_button .agree {
   padding-left: 25px;
 }
-.reservation_form .book_button {
-  position: relative;
-  top: 50px;
+.reservation_form .form_footer {
+  width: 100%;
+  height: 50px;
+  margin-top: 40px !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.reservation_form .form_footer .book_button {
   width: 200px;
   height: 50px;
   font-family: "Open Sans";
@@ -840,11 +846,30 @@ RESERVATION-FORM
   cursor: pointer;
   border-radius: 3px;
 }
-.reservation_form .book_button:hover {
+.reservation_form .form_footer .book_button:hover {
   background-color: #24292e;
   color: #fff;
   transition-duration: 0.4s;
   border: 2px solid #fff;
+}
+.reservation_form .form_footer .price_holder {
+  width: 300px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  font-family: "Open Sans";
+  color: #24292e;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reservation_form .form_footer .price_holder h1 {
+  font-size: 1.2em;
+  color: #24292e;
+}
+.reservation_form .form_footer .price_holder h1 span {
+  font-size: 1.4em;
 }
 
 .photo_grid {

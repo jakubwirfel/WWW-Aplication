@@ -1,6 +1,9 @@
 <?php include ("./server/server.php") ?>
 <?php 
-$_SESSION['selected_hotel_name']  = $_GET['hotel_name'];
+$hotel_name = $_SESSION['selected_hotel_name'];
+$query = "SELECT price FROM hotels WHERE name ='$hotel_name'";
+$results = mysqli_query($db, $query);
+while ($row = mysqli_fetch_array($results) ) { 
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -23,69 +26,62 @@ $_SESSION['selected_hotel_name']  = $_GET['hotel_name'];
         <section class="content_inside">
             <div class="reservation_form_box">
                 <h1>Book your vacation in <span><?php echo $_SESSION['selected_hotel_name'];?></span></h1>
-                <form autocomplete="off" id="reservation_form " class="reservation_form" action="confirm.php" accept-charset="UTF-8"
+                <form autocomplete="off" id="reservation_form " class="reservation_form" action="/" accept-charset="UTF-8"
                     method="POST">
                     <div class="reservation_row">
                         <div class="reservation_column">
-                            <input name="reservation_name" type="text" id="reservation_name" class="input_reservation" placeholder="First name*" required="required"/>
+                            <input name="reservation_name" type="text" id="reservation_name" class="input_reservation" value="<?php echo $_POST['reservation_name'];?>" readonly/>
                         </div>
                         <div class="reservation_column">
-                            <input name="reservation_checkin" onfocus="(this.type='date')" onblur="(this.type='text')" type="text" id="reservation_checkin" class="input_reservation" required="required" placeholder="Check in*"/>
-                        </div>
-                    </div>
-                    <div class="reservation_row">
-                        <div class="reservation_column">
-                            <input name="reservation_surname" type="text" id="reservation_name" class="input_reservation" placeholder="Last name*" required="required"/>
-                        </div>
-                        <div class="reservation_column">
-                        <input name="reservation_checkout" onfocus="(this.type='date')" onblur="(this.type='text')" type="text" id="reservation_checkout" class="input_reservation" required="required" placeholder="Check out*"/>
+                            <input name="reservation_checkin" type="text" id="reservation_checkin" class="input_reservation" value="<?php echo $_POST['reservation_checkin'];?>"  readonly/>
                         </div>
                     </div>
                     <div class="reservation_row">
                         <div class="reservation_column">
-                            <input name="reservation_phone" type="text" id="reservation_name" class="input_reservation" placeholder="Phone number*" required="required"/>
+                            <input name="reservation_surname" type="text" id="reservation_name" class="input_reservation" value="<?php echo $_POST['reservation_surname'];?>" readonly/>
                         </div>
                         <div class="reservation_column">
-                            <select name="reservation_adults" id="reservation_adults" class="input_reservation" required="required">
-                                <option selected value="1">Adult: 1</option>
-                                <option value="2">Adults: 2</option>
-                                <option value="3">Adults: 3</option>
-                                <option value="4">Adults: 4</option>
-                                <option value="5">Adults: 5</option>
-                                <option value="6">Adults: 6</option>
-                                <option value="7">Adults: 7</option>
-                                <option value="8">Adults: 8</option>
-                            </select>
+                        <input name="reservation_checkout" type="text" id="reservation_checkout" class="input_reservation"  value="<?php echo $_POST['reservation_checkout'];?>" readonly/>
                         </div>
                     </div>
                     <div class="reservation_row">
                         <div class="reservation_column">
-                            <input name="reservation_email" type="text" id="reservation_name" class="input_reservation" placeholder="Email address*" required="required"/>  
+                            <input name="reservation_phone" type="text" id="reservation_name" class="input_reservation" value="<?php echo $_POST['reservation_phone'];?>" readonly/>
                         </div>
                         <div class="reservation_column">
-                        <select name="reservation_children" id="reservation_children" class="input_reservation" required="required">
-                                <option selected value="0">Children: 0</option>
-                                <option value="1">Children: 1</option>
-                                <option value="2">Children: 2</option>
-                                <option value="3">Children: 3</option>
-                                <option value="4">Children: 4</option>
-                                <option value="5">Children: 5</option>
-                            </select>
+                            <input name="reservation_adults" id="reservation_adults" class="input_reservation" value="<?php echo $_POST['reservation_adults'];?>" readonly/>
+                        </div>
+                    </div>
+                    <div class="reservation_row">
+                        <div class="reservation_column">
+                            <input name="reservation_email" type="text" id="reservation_name" class="input_reservation" value="<?php echo $_POST['reservation_email'];?>" readonly/>  
+                        </div>
+                        <div class="reservation_column">
+                        <input name="reservation_children" id="reservation_children" class="input_reservation" value="<?php echo $_POST['reservation_children'];?>" readonly />
                         </div>
                     </div>
                     <div class="text-holder">                    
-                        <textarea class="input_reservation text_area" placeholder="Message" name="reservation_message" cols="50" rows="10"></textarea>
-                    </div>
-                    <p class="privacy_policy">By sending an inquiry through this form, you acknowledge you are familiar with the <a href="#">Privacy policy</a>. of Villa for Rent d.o.o. and agree with it. With this you also give consent (permission) for the collection and processing of personal data specified in the form, and which are necessary for us to be able to accommodate your request.</p>
-                    <div class="privacy_policy_button">
-                        <div class="round">
-                            <input type="checkbox" id="checkbox" name="privacy_policy" value="1" required="required"/>
-                            <label for="checkbox"></label>
-                        </div>
-                        <p class="agree"> I agree</p>
+                        <textarea class="input_reservation text_area"  name="reservation_message" placeholder="<?php echo $_POST['reservation_message'];?>" readonly cols="50" rows="10"></textarea>
                     </div>
                     <div class="form_footer">
-                        <input type="submit" name="reservation" value="PREVIEW" class="book_button" />
+                        <input type="submit" name="reservation_confirm" value="CONFIRM" class="book_button" />
+                        <div class="price_holder">
+                            <?php 
+                            // PHP code to find the number of days 
+                            // between two given dates 
+                                
+                            // Creates DateTime objects 
+                            $datetime1 = date_create($_POST['reservation_checkin']); 
+                            $datetime2 = date_create($_POST['reservation_checkout']); 
+                                
+                            // Calculates the difference between DateTime objects 
+                            $interval = date_diff($datetime1, $datetime2); 
+                                
+                            // Display the result 
+                            $days = $interval->format('%a'); 
+                            ?> 
+                            <h1><?php echo $days?> NIGHT/S<span> <?php echo $row['price']* $days?>$</span></h1>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -129,3 +125,4 @@ $_SESSION['selected_hotel_name']  = $_GET['hotel_name'];
 </body>
 
 </html>
+<?php } ?>
