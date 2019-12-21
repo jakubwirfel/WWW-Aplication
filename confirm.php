@@ -1,7 +1,7 @@
 <?php include ("./server/server.php") ?>
 <?php 
 $hotel_name = $_SESSION['selected_hotel_name'];
-$query = "SELECT price FROM hotels WHERE name ='$hotel_name'";
+$query = "SELECT price, id_hotel FROM hotels WHERE name ='$hotel_name'";
 $results = mysqli_query($db, $query);
 while ($row = mysqli_fetch_array($results) ) { 
 ?>
@@ -21,13 +21,15 @@ while ($row = mysqli_fetch_array($results) ) {
 
 <body class="main_body">
 <?php include ("./php_components/nav.php")?>
+<?php include ('./php_components/errors.php'); ?>
     <main class="main_page" >
         <div class="header_fix"></div>
         <section class="content_inside">
             <div class="reservation_form_box">
                 <h1>Book your vacation in <span><?php echo $_SESSION['selected_hotel_name'];?></span></h1>
-                <form autocomplete="off" id="reservation_form " class="reservation_form" action="/" accept-charset="UTF-8"
+                <form autocomplete="off" id="reservation_form " class="reservation_form" action="confirm.php" accept-charset="UTF-8"
                     method="POST">
+                    <input type="hidden" value="<?php echo  $row['id_hotel'];?>" name="id_hotel" />
                     <div class="reservation_row">
                         <div class="reservation_column">
                             <input name="reservation_name" type="text" id="reservation_name" class="input_reservation" value="<?php echo $_POST['reservation_name'];?>" readonly/>
@@ -83,6 +85,7 @@ while ($row = mysqli_fetch_array($results) ) {
                             <h1><?php echo $days?> NIGHT/S<span> <?php echo $row['price']* $days?>$</span></h1>
                         </div>
                     </div>
+                    <input type="hidden" value="<?php echo  $row['price']* $days?>" name="price" />
                 </form>
             </div>
             <aside class="contact_box">

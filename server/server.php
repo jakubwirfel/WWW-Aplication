@@ -89,5 +89,58 @@ if (isset($_GET['logout'])) {
   header('location: index.php');
 }
 /*=====================CONFIRMED RESERVATION================== */
+if (isset($_POST['reservation_confirm'])) {
+  $id_reservation = uniqid();
+  $name = mysqli_real_escape_string($db, $_POST['reservation_name']);
+  $surname = mysqli_real_escape_string($db, $_POST['reservation_surname']);
+  $phone = mysqli_real_escape_string($db, $_POST['reservation_phone']);
+  $email = mysqli_real_escape_string($db, $_POST['reservation_email']);
+  $adults = mysqli_real_escape_string($db, $_POST['reservation_adults']);
+  $children = mysqli_real_escape_string($db, $_POST['reservation_children']);
+  $checkin = mysqli_real_escape_string($db, $_POST['reservation_checkin']);
+  $checkout = mysqli_real_escape_string($db, $_POST['reservation_checkout']);
+  $massage = mysqli_real_escape_string($db, $_POST['reservation_message']);
+  $price = mysqli_real_escape_string($db, $_POST['price']);
+  $id_hotel = mysqli_real_escape_string($db, $_POST['id_hotel']);
 
+  if(isset($_SESSION['username'])) {
+    $isuser = 1;
+    $username = $_SESSION['username'];
+    $user_id_query = "SELECT id_user FROM users WHERE username='$username' LIMIT 1";
+    $result = mysqli_query($db, $user_id_query);
+    $user = mysqli_fetch_assoc($result);
+    $userid = $user['id_user'];
+  } else {
+    $isuser = 0;
+    $userid = 0;
+  }
+
+  if (empty($name)) { array_push($errors, "Name is required"); }
+  if (empty($surname)) { array_push($errors, "Surname is required"); }
+  if (empty($phone)) { array_push($errors, "Phone is required"); }
+  if (empty($email)) { array_push($errors, "Email is required"); }
+  if (empty($adults)) { array_push($errors, "Adults is required"); }
+  if (empty($checkin)) { array_push($errors, "Checkin is required"); }
+  if (empty($checkout)) { array_push($errors, "Checkout is required"); }
+
+  $date_check_query = "SELECT * FROM reservation WHERE id_hotel='$id_hotel' AND check_in='$checkin'";
+  $result = mysqli_query($db, $user_check_query);
+  $date = mysqli_fetch_assoc($result);
+  
+  if ($date) { 
+    if ($date['id_hotel'] === $id_hotel &&  $date['check_in'] === $checkin) {
+      array_push($errors, "In this date villa is 
+      reserved");
+    }
+  }
+
+  if (count($errors) === 0) {
+
+  	$query = "INSERT INTO reservation (id_reservation, client_name, client_surname, client_phone, client_email, adults, children, check_in, check_out, massage, price, is_user, id_user, id_hotel) VALUES
+    ('$id_reservation', '$name', '$surname', '$phone', '$email', '$adults', '$children', '$checkin', '$checkout', '$massage','$price', '$isuser', '$userid', '$id_hotel')";
+    mysqli_query($db, $query);
+    
+    header('location: ./user/user_reservation.php');
+  }
+}
 ?>
