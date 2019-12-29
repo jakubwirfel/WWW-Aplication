@@ -103,18 +103,6 @@ if (isset($_POST['reservation_confirm'])) {
   $price = mysqli_real_escape_string($db, $_POST['price']);
   $id_hotel = mysqli_real_escape_string($db, $_POST['id_hotel']);
 
-  if(isset($_SESSION['username'])) {
-    $isuser = 1;
-    $username = $_SESSION['username'];
-    $user_id_query = "SELECT id_user FROM users WHERE username='$username' LIMIT 1";
-    $result = mysqli_query($db, $user_id_query);
-    $user = mysqli_fetch_assoc($result);
-    $userid = $user['id_user'];
-  } else {
-    $isuser = 0;
-    $userid = 0;
-  }
-
   if (empty($name)) { array_push($errors, "Name is required"); }
   if (empty($surname)) { array_push($errors, "Surname is required"); }
   if (empty($phone)) { array_push($errors, "Phone is required"); }
@@ -134,13 +122,22 @@ if (isset($_POST['reservation_confirm'])) {
     }
   }
 
-  if (count($errors) === 0) {
-
-  	$query = "INSERT INTO reservation (id_reservation, client_name, client_surname, client_phone, client_email, adults, children, check_in, check_out, massage, price, is_user, id_user, id_hotel) VALUES
+  if(isset($_SESSION['username']) && count($errors) === 0) {
+    $isuser = 1;
+    $username = $_SESSION['username'];
+    $user_id_query = "SELECT id_user FROM users WHERE username='$username' LIMIT 1";
+    $result = mysqli_query($db, $user_id_query);
+    $user = mysqli_fetch_assoc($result);
+    $userid = $user['id_user'];
+    $query = "INSERT INTO reservation (id_reservation, client_name, client_surname, client_phone, client_email, adults, children, check_in, check_out, massage, price, is_user, id_user, id_hotel) VALUES
     ('$id_reservation', '$name', '$surname', '$phone', '$email', '$adults', '$children', '$checkin', '$checkout', '$massage','$price', '$isuser', '$userid', '$id_hotel')";
     mysqli_query($db, $query);
-    
     header('location: ./user/user_reservation.php');
+  } else {
+    $query = "INSERT INTO reservation (id_reservation, client_name, client_surname, client_phone, client_email, adults, children, check_in, check_out, massage, price, is_user, id_user, id_hotel) VALUES
+    ('$id_reservation', '$name', '$surname', '$phone', '$email', '$adults', '$children', '$checkin', '$checkout', '$massage','$price', NULL, NULL, '$id_hotel')";
+    mysqli_query($db, $query);
+    header('location: main.php');
   }
 }
 ?>
