@@ -129,6 +129,7 @@ if (isset($_POST['reservation_confirm'])) {
     $result = mysqli_query($db, $user_id_query);
     $user = mysqli_fetch_assoc($result);
     $userid = $user['id_user'];
+    
     $query = "INSERT INTO reservation (id_reservation, client_name, client_surname, client_phone, client_email, adults, children, check_in, check_out, massage, price, is_user, id_user, id_hotel) VALUES
     ('$id_reservation', '$name', '$surname', '$phone', '$email', '$adults', '$children', '$checkin', '$checkout', '$massage','$price', '$isuser', '$userid', '$id_hotel')";
     mysqli_query($db, $query);

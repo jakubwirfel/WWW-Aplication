@@ -1,13 +1,12 @@
         <header id="navbar">
             <div class="nav_box">
-                <a href="index.php"><div class="logo"><img src="assets/logo.png"/></div></a>
+                <a href="index.php"><div class="logo"><img src="./assets/logo.png"/></div></a>
                 <nav class="navigation">
                     <ul>
                         <?php  if (isset($_SESSION['confirm'])) : ?>
                             <li><a href="#" aria-haspopup="true"><?=$_SESSION['username']?><i class="fas fa-angle-down"></i></a>
                                 <ul class="dropdown" aria-label="submenu">
-                                    <li><a href="#">Your profile</a></li>
-                                    <li><a hred="#">Reservations</a></li>
+                                    <li><a href="user_profile.php">Your profile</a></li>
                                     <li><a href="#">Help</a></li>
                                     <li><a href="#">Settings</a></li>
                                     <li><a href="index.php?logout='1'">Sign out</a></li>
