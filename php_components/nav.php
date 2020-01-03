@@ -6,7 +6,7 @@
                         <?php  if (isset($_SESSION['confirm'])) : ?>
                             <li><a href="#" aria-haspopup="true"><?=$_SESSION['username']?><i class="fas fa-angle-down"></i></a>
                                 <ul class="dropdown" aria-label="submenu">
-                                    <li><a href="user_profile.php">Your profile</a></li>
+                                    <li><a href="user_reservation.php">Reservations</a></li>
                                     <li><a href="#">Help</a></li>
                                     <li><a href="#">Settings</a></li>
                                     <li><a href="index.php?logout='1'">Sign out</a></li>

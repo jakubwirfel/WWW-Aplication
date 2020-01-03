@@ -84,10 +84,10 @@ while ($row = mysqli_fetch_array($results) ) {
             </div>
             <div class="price_hotel">
                     <div class="price-holder">
-                        <p>FROM <span> <?php echo $row['price']?>$ </span> DAILY</p>
+                        <p>FROM <span> <?php echo $row['hotel_price']?>$ </span> DAILY</p>
                     </div>
                     <div class="price-holder">
-                        <p>FROM <span> <?php echo $row['price']*7?>$ </span> WEEKLY</p>
+                        <p>FROM <span> <?php echo $row['hotel_price']*7?>$ </span> WEEKLY</p>
                     </div>
                     <a href="reservation.php?hotel_name=<?php echo $row['name']?>" class="button-holder reservation_button">
                         Reserve

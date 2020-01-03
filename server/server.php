@@ -133,7 +133,7 @@ if (isset($_POST['reservation_confirm'])) {
     $query = "INSERT INTO reservation (id_reservation, client_name, client_surname, client_phone, client_email, adults, children, check_in, check_out, massage, price, is_user, id_user, id_hotel) VALUES
     ('$id_reservation', '$name', '$surname', '$phone', '$email', '$adults', '$children', '$checkin', '$checkout', '$massage','$price', '$isuser', '$userid', '$id_hotel')";
     mysqli_query($db, $query);
-    header('location: ./user/user_reservation.php');
+    header('location: user_reservation.php');
   } else {
     $query = "INSERT INTO reservation (id_reservation, client_name, client_surname, client_phone, client_email, adults, children, check_in, check_out, massage, price, is_user, id_user, id_hotel) VALUES
     ('$id_reservation', '$name', '$surname', '$phone', '$email', '$adults', '$children', '$checkin', '$checkout', '$massage','$price', NULL, NULL, '$id_hotel')";

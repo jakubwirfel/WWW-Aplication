@@ -1,7 +1,7 @@
 <?php include ("./server/server.php") ?>
 <?php 
 $hotel_name = $_SESSION['selected_hotel_name'];
-$query = "SELECT price, id_hotel FROM hotels WHERE name ='$hotel_name'";
+$query = "SELECT hotel_price, id_hotel FROM hotels WHERE name ='$hotel_name'";
 $results = mysqli_query($db, $query);
 while ($row = mysqli_fetch_array($results) ) { 
 ?>
@@ -82,10 +82,10 @@ while ($row = mysqli_fetch_array($results) ) {
                             // Display the result 
                             $days = $interval->format('%a'); 
                             ?> 
-                            <h1><?php echo $days?> NIGHT/S<span> <?php echo $row['price']* $days?>$</span></h1>
+                            <h1><?php echo $days?> NIGHT/S<span> <?php echo $row['hotel_price']* $days?>$</span></h1>
                         </div>
                     </div>
-                    <input type="hidden" value="<?php echo  $row['price']* $days?>" name="price" />
+                    <input type="hidden" value="<?php echo  $row['hotel_price']* $days?>" name="price" />
                 </form>
             </div>
             <aside class="contact_box">

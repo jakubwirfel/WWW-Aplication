@@ -82,9 +82,9 @@
             </div>
             <div class="hotel_card_price">
                 <h1>FROM</h1>
-                <span class="daily_contet"><?php echo $row['price']?>$</span>
+                <span class="daily_contet"><?php echo $row['hotel_price']?>$</span>
                 <span>DAILY</span>
-                <span class="weekly_contet"><?php echo $row['price']*7?>$</span>
+                <span class="weekly_contet"><?php echo $row['hotel_price']*7?>$</span>
                 <span>WEEKLY</span>
             </div>
         </div>
