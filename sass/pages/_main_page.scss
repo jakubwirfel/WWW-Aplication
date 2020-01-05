@@ -23,6 +23,9 @@
         width: 500px;
         top: 100px;
     }
+    @include respond-to(small) {
+        width: 100%;
+      }
     .filter {
         background: rgba($color: #000, $alpha: 0.9);
         width: 450px;

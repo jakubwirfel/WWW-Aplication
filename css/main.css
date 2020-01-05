@@ -20,6 +20,11 @@ html, body {
     width: calc(100% - 100px);
   }
 }
+@media (max-width: 560px) {
+  .main_page {
+    width: 100%;
+  }
+}
 
 .header_fix {
   height: 125px;
@@ -269,6 +274,17 @@ header.scroll {
     width: calc(100% - 100px);
   }
 }
+@media (max-width: 560px) {
+  .nav_box {
+    width: 100%;
+  }
+}
+@media (max-width: 560px) {
+  .nav_box .logo img {
+    width: 150px;
+    height: 150px;
+  }
+}
 
 .navigation {
   transition: all 0.6s ease-in-out;
@@ -277,6 +293,14 @@ header.scroll {
   align-items: center;
   width: 100%;
   height: 100px;
+}
+.navigation .nav_item {
+  padding-right: 50px;
+}
+@media (max-width: 560px) {
+  .navigation .nav_item {
+    padding-right: 20px;
+  }
 }
 
 a {
@@ -299,11 +323,21 @@ li {
   text-decoration: none;
   transition-duration: 0.5s;
 }
+@media (max-width: 560px) {
+  li {
+    padding: 0.5rem;
+  }
+}
 
 li a {
   color: #fff;
   font-size: 1.2rem;
   text-transform: capitalize;
+}
+@media (max-width: 560px) {
+  li a {
+    font-size: 0.9rem;
+  }
 }
 li a i {
   padding-left: 10px;
@@ -378,6 +412,12 @@ ul li ul li:hover {
   pointer-events: none;
   transition: all 0.3s;
 }
+@media (max-width: 560px) {
+  .modal-window {
+    width: 100%;
+    height: 100%;
+  }
+}
 
 .modal-window:target {
   visibility: visible;
@@ -395,6 +435,11 @@ ul li ul li:hover {
   padding: 2em;
   background: #ffffff;
 }
+@media (max-width: 560px) {
+  .modal-window > div {
+    width: 100%;
+  }
+}
 
 .modal-window header {
   font-weight: bold;
@@ -404,6 +449,11 @@ ul li ul li:hover {
   font-size: 150%;
   margin: 0 0 15px;
   font-family: "Open Sans", sans-serif;
+}
+@media (max-width: 560px) {
+  .modal-window h1 {
+    font-size: 100%;
+  }
 }
 
 .modal-close {
@@ -417,6 +467,7 @@ ul li ul li:hover {
   width: 70px;
   text-decoration: none;
   font-family: "Open Sans", sans-serif;
+  font-size: 90%;
 }
 
 .modal-close:hover {
@@ -950,7 +1001,7 @@ RESERVATION-FORM
   font-size: 2.5rem;
   font-family: "Open Sans", sans-serif;
   letter-spacing: 5px;
-  width: 850px;
+  width: 100%;
   text-align: center;
   text-transform: uppercase;
   color: #fff;
@@ -988,6 +1039,16 @@ RESERVATION-FORM
     height: 40px;
   }
 }
+@media (max-width: 560px) {
+  .hero_text {
+    font-size: 0.7rem;
+  }
+
+  .hero_button {
+    width: 200px;
+    height: 40px;
+  }
+}
 .body_join {
   background-color: #24292e;
 }
@@ -1010,6 +1071,12 @@ RESERVATION-FORM
 @media (max-width: 1600px) {
   .reg_box {
     width: 50%;
+  }
+}
+@media (max-width: 560px) {
+  .reg_box {
+    width: 100%;
+    margin-top: 100px !important;
   }
 }
 .reg_box h1 {
@@ -1057,6 +1124,11 @@ RESERVATION-FORM
   .filter_box {
     width: 500px;
     top: 100px;
+  }
+}
+@media (max-width: 560px) {
+  .filter_box {
+    width: 100%;
   }
 }
 .filter_box .filter {

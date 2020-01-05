@@ -17,6 +17,10 @@ html, body {
     @include respond-to(large) {
         width: calc(100% - 100px);
     }
+    @include respond-to(small) {
+        width: 100%;
+    }
+    
 }
 .header_fix {
     height: 125px;

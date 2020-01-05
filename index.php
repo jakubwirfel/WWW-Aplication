@@ -12,8 +12,8 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     </head>
     <body class="home_body">
+    <?php include ("./php_components/nav.php")?>
         <main class="main_page">
-            <?php include ("./php_components/nav.php")?>
             <div class="hero_box">
                 <div class="hero_text">                
                     <h1>

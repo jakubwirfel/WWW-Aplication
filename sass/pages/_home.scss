@@ -19,7 +19,7 @@
       font-size: 2.5rem;
       font-family: 'Open Sans', sans-serif;
       letter-spacing: 5px;
-      width: 850px;
+      width: 100%;
       text-align: center;
       text-transform: uppercase;
       color: #fff;
@@ -50,6 +50,15 @@
       }
     .hero_button {
         width: 250px;
+        height: 40px;
+      }
+  }
+  @include respond-to(small) {
+    .hero_text  {
+        font-size: 0.7rem;
+      }
+    .hero_button {
+        width: 200px;
         height: 40px;
       }
   }
