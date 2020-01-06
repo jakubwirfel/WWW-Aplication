@@ -772,6 +772,11 @@ FILTER-FORM
 .filter_form .filter_group_row .filter_group_row_box .input_row option {
   background-color: #000;
 }
+@media (max-width: 560px) {
+  .filter_form .filter_group_row .filter_group_row_box .input_row option {
+    font-size: 0.7em;
+  }
+}
 .filter_form .filter_group_row .filter_group_row_box .left {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -793,6 +798,11 @@ RESERVATION-FORM
   color: #fff;
   padding: 30px;
 }
+@media (max-width: 560px) {
+  .reservation_form {
+    padding: 10px;
+  }
+}
 .reservation_form .reservation_row {
   display: flex;
   justify-content: space-between;
@@ -803,6 +813,11 @@ RESERVATION-FORM
 .reservation_form .reservation_row .reservation_column {
   width: 45%;
   height: 40px;
+}
+@media (max-width: 560px) {
+  .reservation_form .reservation_row .reservation_column {
+    width: 49%;
+  }
 }
 .reservation_form .input_reservation {
   width: 100%;
@@ -1075,7 +1090,7 @@ RESERVATION-FORM
 }
 @media (max-width: 560px) {
   .reg_box {
-    width: 100%;
+    width: calc(100% - 50px);
     margin-top: 100px !important;
   }
 }
@@ -1160,6 +1175,11 @@ RESERVATION-FORM
     padding-bottom: 30px;
   }
 }
+@media (max-width: 560px) {
+  .filter_box .filter h1 {
+    font-size: 1.2em;
+  }
+}
 
 .content_change {
   height: 150px;
@@ -1179,6 +1199,12 @@ RESERVATION-FORM
     font-size: 0.9em;
   }
 }
+@media (max-width: 560px) {
+  .content_change .title {
+    font-size: 0.7em;
+    padding-left: 25px;
+  }
+}
 .content_change .sort {
   position: absolute;
   bottom: 0px;
@@ -1186,6 +1212,11 @@ RESERVATION-FORM
   font-size: 1em;
   color: #fff;
   width: 300px;
+}
+@media (max-width: 560px) {
+  .content_change .sort {
+    left: 25px;
+  }
 }
 .content_change .sort p {
   display: inline-block;
@@ -1256,6 +1287,13 @@ RESERVATION-FORM
     min-width: 180px;
   }
 }
+@media (max-width: 560px) {
+  .content_change .map_show_box {
+    left: 25px;
+    right: inherit;
+    bottom: -100px;
+  }
+}
 
 .map {
   height: 400px;
@@ -1265,6 +1303,11 @@ RESERVATION-FORM
   background-color: #fff;
   display: none;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 560px) {
+  .map {
+    top: 250px;
+  }
 }
 
 .grid_box {
@@ -1276,6 +1319,12 @@ RESERVATION-FORM
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 3em;
   padding-bottom: 200px;
+}
+@media (max-width: 560px) {
+  .grid_box {
+    top: 300px;
+    padding-bottom: 100px;
+  }
 }
 
 .hotel_card {
@@ -1319,6 +1368,11 @@ RESERVATION-FORM
   font-size: 0.7em;
   padding: 5px 0px;
   text-transform: uppercase;
+}
+@media (max-width: 560px) {
+  .hotel_card .hotel_card_box .hotel_card_name {
+    font-size: 0.6em;
+  }
 }
 .hotel_card .hotel_card_box .hotel_card_info_box {
   width: 100%;
@@ -1419,6 +1473,11 @@ RESERVATION-FORM
     width: calc(100% - 100px);
   }
 }
+@media (max-width: 560px) {
+  .bg_img_hotel .bg_center_info_holder {
+    height: 75%;
+  }
+}
 .bg_img_hotel .bg_center_info_holder .holder_box {
   width: auto;
   height: 200px;
@@ -1427,6 +1486,11 @@ RESERVATION-FORM
   align-items: flex-start;
   flex-direction: column;
   padding-bottom: 50px;
+}
+@media (max-width: 560px) {
+  .bg_img_hotel .bg_center_info_holder .holder_box {
+    height: 150px;
+  }
 }
 .bg_img_hotel .hotel_location,
 .bg_img_hotel .hotel_name {
@@ -1441,10 +1505,20 @@ RESERVATION-FORM
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
 }
+@media (max-width: 560px) {
+  .bg_img_hotel .hotel_location h1 {
+    font-size: 0.9em;
+  }
+}
 .bg_img_hotel .hotel_name h1 {
   font-size: 1.7em;
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
+}
+@media (max-width: 560px) {
+  .bg_img_hotel .hotel_name h1 {
+    font-size: 1em;
+  }
 }
 
 .info_box {
@@ -1476,6 +1550,11 @@ RESERVATION-FORM
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+}
+@media (max-width: 560px) {
+  .info_box .center_info_holder .info_placeholder {
+    display: none;
+  }
 }
 .info_box .center_info_holder .info_placeholder .info_column {
   position: relative;
@@ -1519,6 +1598,12 @@ RESERVATION-FORM
   grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
   grid-gap: 0;
 }
+@media (max-width: 560px) {
+  .info_box .center_info_holder .price_hotel {
+    height: 300px;
+    bottom: 22px;
+  }
+}
 .info_box .center_info_holder .price_hotel .price-holder,
 .info_box .center_info_holder .price_hotel .button-holder {
   color: #24292e;
@@ -1540,6 +1625,12 @@ RESERVATION-FORM
     font-size: 1em;
   }
 }
+@media (max-width: 560px) {
+  .info_box .center_info_holder .price_hotel .price-holder p,
+.info_box .center_info_holder .price_hotel .button-holder p {
+    font-size: 0.9em;
+  }
+}
 .info_box .center_info_holder .price_hotel .price-holder span,
 .info_box .center_info_holder .price_hotel .button-holder span {
   font-size: 1.8em;
@@ -1549,6 +1640,12 @@ RESERVATION-FORM
   .info_box .center_info_holder .price_hotel .price-holder span,
 .info_box .center_info_holder .price_hotel .button-holder span {
     font-size: 1.6em;
+  }
+}
+@media (max-width: 560px) {
+  .info_box .center_info_holder .price_hotel .price-holder span,
+.info_box .center_info_holder .price_hotel .button-holder span {
+    font-size: 1.3em;
   }
 }
 .info_box .center_info_holder .price_hotel .reservation_button {
@@ -1562,6 +1659,11 @@ RESERVATION-FORM
 @media (max-width: 1600px) {
   .info_box .center_info_holder .price_hotel .reservation_button {
     font-size: 1.8em;
+  }
+}
+@media (max-width: 560px) {
+  .info_box .center_info_holder .price_hotel .reservation_button {
+    font-size: 1.5em;
   }
 }
 .info_box .center_info_holder .price_hotel .reservation_button:hover {
@@ -1586,6 +1688,12 @@ RESERVATION-FORM
     width: calc(100% - 100px);
   }
 }
+@media (max-width: 560px) {
+  .main_page_hotel {
+    width: 100%;
+    top: calc(100% + 300px);
+  }
+}
 
 .about_hotel {
   width: 100%;
@@ -1601,6 +1709,11 @@ RESERVATION-FORM
 @media (max-width: 1600px) {
   .about_hotel h1 {
     font-size: 2.5em;
+  }
+}
+@media (max-width: 560px) {
+  .about_hotel h1 {
+    font-size: 1.5em;
   }
 }
 .about_hotel h1 span {
@@ -1623,6 +1736,14 @@ RESERVATION-FORM
   -moz-column-rule: 5px solid #24292e;
   column-gap: 40px;
   column-rule: 5px solid #24292e;
+}
+@media (max-width: 560px) {
+  .about_hotel .text_holder {
+    -webkit-column-count: inherit;
+    -moz-column-count: inherit;
+    column-count: inherit;
+    padding: 20px;
+  }
 }
 .about_hotel .text_holder p {
   color: #24292e;
@@ -1649,11 +1770,22 @@ RESERVATION-FORM
     font-size: 0.9em;
   }
 }
+@media (max-width: 560px) {
+  .section_title {
+    font-size: 0.7em;
+    top: 100px;
+  }
+}
 
 hr {
   border: 2px solid #fff;
   position: relative;
   top: 250px;
+}
+@media (max-width: 1600px) {
+  hr {
+    top: 175px;
+  }
 }
 
 .facilities {
@@ -1666,6 +1798,12 @@ hr {
   justify-content: center;
   align-items: center;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
+}
+@media (max-width: 1600px) {
+  .facilities {
+    top: 120px;
+    height: auto;
+  }
 }
 .facilities .facilities_box {
   height: auto;
@@ -1695,20 +1833,42 @@ hr {
   font-family: "Open Sans", sans-serif;
   font-size: 1em;
 }
+@media (max-width: 1600px) {
+  .facilities .facilities_box .column div {
+    font-size: 0.7em;
+  }
+}
 .facilities .facilities_box .column div img {
   position: absolute;
   height: 60px;
   width: 60px;
   left: -25px;
 }
+@media (max-width: 1600px) {
+  .facilities .facilities_box .column div img {
+    height: 50px;
+    width: 50px;
+  }
+}
 .facilities .facilities_box .column div span {
   position: absolute;
   left: 45px;
+}
+@media (max-width: 1600px) {
+  .facilities .facilities_box .column div span {
+    left: 15px;
+    width: 50px;
+  }
 }
 
 .fix {
   width: 100%;
   height: 300px;
+}
+@media (max-width: 1600px) {
+  .fix {
+    height: 200px;
+  }
 }
 
 .content_inside {
@@ -1716,10 +1876,20 @@ hr {
   height: auto;
   display: flex;
 }
+@media (max-width: 560px) {
+  .content_inside {
+    flex-direction: column;
+  }
+}
 
 .reservation_form_box {
   height: 600px;
   width: 70%;
+}
+@media (max-width: 560px) {
+  .reservation_form_box {
+    width: 100%;
+  }
 }
 .reservation_form_box h1 {
   width: 100%;
@@ -1727,6 +1897,11 @@ hr {
   font-family: "Open Sans", sans-serif;
   font-size: 2.2rem;
   color: #fff;
+}
+@media (max-width: 560px) {
+  .reservation_form_box h1 {
+    font-size: 1.8rem;
+  }
 }
 .reservation_form_box h1 span {
   font-style: italic;
@@ -1740,14 +1915,30 @@ hr {
   font-family: "Open Sans", sans-serif;
   color: #fff;
 }
+@media (max-width: 560px) {
+  .contact_box {
+    width: 100%;
+    margin-top: 320px !important;
+  }
+}
 .contact_box h1 {
   text-align: center;
   padding-bottom: 30px;
+}
+@media (max-width: 560px) {
+  .contact_box h1 {
+    font-size: 1.8rem;
+  }
 }
 .contact_box p {
   text-align: center;
   font-size: 1.5em;
   letter-spacing: 2px;
+}
+@media (max-width: 560px) {
+  .contact_box p {
+    font-size: 1.2rem;
+  }
 }
 .contact_box .email_contact {
   text-align: center;

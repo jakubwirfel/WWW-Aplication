@@ -253,6 +253,9 @@ FILTER-FORM
         }
         option {
           background-color: #000;
+          @include respond-to(small) {
+            font-size: 0.7em;
+          }
         }
       }
       .left {
@@ -277,6 +280,9 @@ RESERVATION-FORM
   font-family: 'Open Sans';
   color: #fff;
   padding: 30px;
+  @include respond-to(small) {
+    padding: 10px;
+}
   .reservation_row {
     display: flex;
     justify-content: space-between;
@@ -286,6 +292,9 @@ RESERVATION-FORM
     .reservation_column {
       width: 45%;
       height: 40px;
+      @include respond-to(small) {
+        width: 49%;
+    }
     }
   }
   .input_reservation {

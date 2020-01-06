@@ -19,6 +19,9 @@
         @include respond-to(large) {
         width: calc(100% - 100px);
         }
+        @include respond-to(small) {
+            height: 75%;
+        }
         .holder_box {
             width: auto;
             height: 200px;
@@ -27,6 +30,9 @@
             align-items: flex-start;
             flex-direction: column;
             padding-bottom: 50px;
+            @include respond-to(small) {
+                height: 150px;
+            }
         }
     }
     .hotel_location,
@@ -42,6 +48,9 @@
             font-size: 1.4em;
             text-transform: uppercase;
             font-family: 'Open Sans', sans-serif;
+            @include respond-to(small) {
+                font-size: 0.9em;
+            }
         }
     }
     .hotel_name {
@@ -49,6 +58,9 @@
             font-size: 1.7em;
             text-transform: uppercase;
             font-family: 'Open Sans', sans-serif;
+            @include respond-to(small) {
+                font-size: 1em;
+            }
         }
     }
 }
@@ -77,6 +89,9 @@
             flex-direction: row;
             justify-content: space-evenly;
             align-items: center;
+            @include respond-to(small) {
+                display: none;
+            }
             .info_column { 
                 position: relative;
                 height: 200px;
@@ -119,6 +134,10 @@
             grid-auto-rows: auto; 
             grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); 
             grid-gap: 0;
+            @include respond-to(small) {
+                height: 300px;
+                bottom: 22px;
+            }
             .price-holder,
             .button-holder {
                 color: #24292e;
@@ -134,12 +153,18 @@
                     @include respond-to(large) {
                         font-size: 1em;
                     }
+                    @include respond-to(small) {
+                        font-size: 0.9em;
+                    }
                 }
                 span {
                     font-size: 1.8em;
                     font-weight: bold;
                     @include respond-to(large) {
                         font-size: 1.6em;
+                    }
+                    @include respond-to(small) {
+                        font-size: 1.3em;
                     }
                 }
             }
@@ -152,6 +177,9 @@
                 transition: 0.5s;
                 @include respond-to(large) {
                     font-size: 1.8em;
+                }
+                @include respond-to(small) {
+                    font-size: 1.5em;
                 }
                 &:hover {
                     background-color: #24292e;
@@ -175,6 +203,10 @@
     @include respond-to(large) {
         width: calc(100% - 100px);
     }
+    @include respond-to(small) {
+        width: 100%;
+        top: calc(100% + 300px);;
+    }
 }
 .about_hotel {
     width: 100%;
@@ -187,6 +219,9 @@
         font-size: 3em;
         @include respond-to(large) {
             font-size: 2.5em;
+        }
+        @include respond-to(small) {
+            font-size: 1.5em;
         }
         span {
             font-style: italic;
@@ -209,6 +244,12 @@
         -moz-column-rule: 5px solid #24292e;
         column-gap: 40px;
         column-rule: 5px solid #24292e;
+        @include respond-to(small) {
+            -webkit-column-count: inherit; 
+            -moz-column-count: inherit;
+            column-count: inherit;
+            padding: 20px;
+        }
         p {
             color: #24292e;
             font-family: 'Open Sans', sans-serif;
@@ -230,11 +271,18 @@
     @include respond-to(large) {
         font-size: 0.9em;
     }
+    @include respond-to(small) {
+        font-size: 0.7em;
+        top: 100px;
+    }
 }
 hr {
     border: 2px solid #fff;
     position: relative;
     top: 250px;
+    @include respond-to(large) {
+        top: 175px;
+    }
 }
 .facilities {
     background-color: #fff;
@@ -246,6 +294,10 @@ hr {
     justify-content: center;
     align-items: center;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+    @include respond-to(large) {
+        top: 120px;
+        height: auto;
+    }
     .facilities_box {
         height: auto;
         width: 90%;
@@ -271,15 +323,26 @@ hr {
                 align-items: center;
                 font-family: 'Open Sans', sans-serif;
                 font-size: 1em;
+                @include respond-to(large) {
+                    font-size: 0.7em;
+                }
                 img {
                     position: absolute;
                     height: 60px;
                     width: 60px;
                     left: -25px;
+                    @include respond-to(large) {
+                        height: 50px;
+                        width: 50px;
+                    }
                 }
                 span {
                     position: absolute;
                     left: 45px;
+                    @include respond-to(large) {
+                        left: 15px;
+                        width: 50px;
+                    }
                 }
             }
         }
@@ -288,4 +351,7 @@ hr {
 .fix {
     width: 100%;
     height: 300px;
+    @include respond-to(large) {
+        height: 200px;
+    }
 }

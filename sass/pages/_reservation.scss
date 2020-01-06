@@ -2,16 +2,25 @@
     width: 100%;
     height: auto;
     display: flex;
+    @include respond-to(small) {
+        flex-direction: column;
+    }
 }
 .reservation_form_box {
     height: 600px;
     width: 70%;
+    @include respond-to(small) {
+        width: 100%;
+    }
     h1 {
         width: 100%;
         padding-left: 30px;
         font-family: 'Open Sans', sans-serif;
         font-size: 2.2rem;
         color: #fff;
+        @include respond-to(small) {
+            font-size: 1.8rem;
+        }
         span {
             font-style: italic;
         }
@@ -24,14 +33,24 @@
     padding: 30px 30px;
     font-family:'Open Sans', sans-serif;
     color: #fff;
+    @include respond-to(small) {
+        width: 100%;
+        margin-top: 320px !important;
+    }
     h1 {
         text-align: center;
         padding-bottom: 30px;
+        @include respond-to(small) {
+            font-size: 1.8rem;
+        }
     }
     p {
         text-align: center;
         font-size: 1.5em;
         letter-spacing: 2px;
+        @include respond-to(small) {
+            font-size: 1.2rem;
+        }
     }
     .email_contact {
         text-align: center;
